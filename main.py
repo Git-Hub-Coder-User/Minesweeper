@@ -36,3 +36,4 @@ def main():
         screen.blit(back, (0,0))
 
 main()
+print(background)

@@ -37,11 +37,12 @@ class Grid:
     def generate_bombs(self):
         for i in range(16):
             while True:
-                col = random.randint(0, 8)
-                row = random.randint(0, 8)
+                col = random.randint(0, 7)
+                row = random.randint(0, 7)
+                print(col, row)
                 print(row, col)
                 if type(self.grid[row][col]) != Bomb:
-                    self.grid([row][col]) == Bomb(position = (col, row))
+                    self.grid[row][col] = Bomb(position = (col, row))
                     self.update_grid(col, row)
                     break
     

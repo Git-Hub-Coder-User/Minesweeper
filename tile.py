@@ -12,7 +12,7 @@ class Tile(ABC):
 
 class Bomb(Tile):
 	def __init__(self, display = None, position = None):
-		super().__init(self, display, position)
+		super().__init__(self, display, position)
 		y, x = position
 	
 	def __str__(self):
@@ -22,7 +22,8 @@ class Bomb(Tile):
 		screen.blit(thingies)
 
 class Blank(Tile):
-	def __init__(self, display = None, position = None):
+	def __init__(self, display = None, y = 0, x = 0):
+		position = y, x
 		super().__init(self, display, position)
 		y, x = position
 	
