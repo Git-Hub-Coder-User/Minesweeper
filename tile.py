@@ -19,7 +19,8 @@ class Bomb(Tile):
 		return "x"
 
 	def display(self):
-		screen.blit(thingies)
+		# screen.blit(thingies)
+		pass
 
 class Blank(Tile):
 	def __init__(self, display = None, y = 0, x = 0):
@@ -31,19 +32,21 @@ class Blank(Tile):
 		return "Blank"
 
 	def display(self):
-		screen.blit(thingies)
+		# screen.blit(thingies)
+		pass
 
 class Cover(Tile):
 	def __init__(self, display = None, position = None):
 		super().__init(self, display, position)
 		y, x = position
-		screen.blit(thingies)
+		# screen.blit(thingies)
+
 
 	def __str__(self):
 		return "Cover"
 	
 def clicked(self):
-		del  self
+		del self
 
 class Number(Tile):
 	def __init__(self, display = None, position = None, number = 0):
@@ -54,4 +57,5 @@ class Number(Tile):
 		return self.display
 
 	def display(self):
-		screen.blit(thingies)
+		# screen.blit(thingies)
+		pass
