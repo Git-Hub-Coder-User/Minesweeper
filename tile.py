@@ -1,14 +1,29 @@
 import pygame
-from abc import ABC
+from abc import ABC, abstractmethod
 
 #position needs to be y, x
 class Tile(ABC):
 	def __init__(self, display = None, position = None):
 		self.display = display
 		self.position = position
-	def display(self):
-	#make it so it displays the right thing and goes to position
-	    pass
+	
+	def display(self, position):
+		y, x = position
+		if (y + x) % 2 == 0:
+			y = (y * 100) + 50
+			x = (x * 100) + 50
+
+			self.tile = pygame.image.load("dark_tile.png").convert_alpha
+			self.tile = pygame.transform.scale(self.tile, (50, 50))
+			self.tile_rect = self.tile.get_rect(center = (y, x))
+		
+		if (y + x) % 2 == 1:
+			y = (y * 100) + 50
+			x = (x * 100) + 50
+
+			self.tile = pygame.image.load("light_tile.png").convert_alpha
+			self.tile = pygame.transform.scale(self.tile, (50, 50))
+			self.tile_rect = self.tile.get_rect(center = (y, x))
 
 class Bomb(Tile):
 	def __init__(self, display = None, position = None):
@@ -18,22 +33,21 @@ class Bomb(Tile):
 	def __str__(self):
 		return "x"
 
-	def display(self):
+	def display(self, position):
 		# screen.blit(thingies)
 		pass
 
+
+		
+
 class Blank(Tile):
-	def __init__(self, display = None, y = 0, x = 0):
-		position = y, x
+	def __init__(self, display = None, position = None):
 		super().__init__(display, position)
 		y, x = position
 	
 	def __str__(self):
 		return "Blank"
 
-	def display(self):
-		# screen.blit(thingies)
-		pass
 
 class Cover(Tile):
 	def __init__(self, display = None, position = None):

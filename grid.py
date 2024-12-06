@@ -22,12 +22,15 @@ class Grid:
                     temp.append(self.fill)
                 self.grid.append(temp)
         
-        # print(self.grid)
+    def __str__(self):
+        listed = ""
+        for i in range(8):
+            listed += f"{self.grid[i]}\n"
+        return listed
     
     def convert_grid(self):
-        for temp in self.grid:
-            for x in temp: 
-                y = self.grid.index(temp)
+        for y in range(8):
+            for x in range(8): 
                 print(y, x)
                 if type(self.grid[y][x]) == Bomb:
                     pass
@@ -61,9 +64,10 @@ class Grid:
                 pass
     
     def visual_set_up(self):
-        for y in self.grid:
-            for x in y:
-                self.grid[y][x].display()
+        for y in range(8):
+            for x in range(8):
+                print(f"{y}, {x}")
+                self.grid[y][x].display(position = (y, x))
 
     #This might blow up
     def delete(self, location):

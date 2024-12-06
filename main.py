@@ -11,17 +11,18 @@ from tile import(
 )
 
 pygame.init()
-screen = pygame.display.set_mode((400, 400))
+screen = pygame.display.set_mode((800, 800))
 clock = pygame.time.Clock()
 
 
 def main():
     game = Game("img/backgroud_img.png")
     game.resize_img()
-    background = Grid()
-    background.generate_bombs()
-    background.convert_grid()
-    background.visual_set_up()
+    # background = Grid()
+    # background.generate_bombs()
+    # print(background)
+    # background.convert_grid()
+    # background.visual_set_up()
 
     foreground = Grid(Cover)
     # foreground.convert_grid()
