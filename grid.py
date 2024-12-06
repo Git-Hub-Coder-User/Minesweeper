@@ -22,12 +22,16 @@ class Grid:
                     temp.append(self.fill)
                 self.grid.append(temp)
         
-        print(self.grid)
+        # print(self.grid)
     
     def convert_grid(self):
-        for y in self.grid:
-            for x in y: 
-                if self.grid[y][x] == 0:
+        for temp in self.grid:
+            for x in temp: 
+                y = self.grid.index(temp)
+                print(y, x)
+                if type(self.grid[y][x]) == Bomb:
+                    pass
+                elif self.grid[y][x] == 0:
                     self.grid[y][x] = Blank(position=(y, x))
                 elif self.grid[y][x] > 0 and self.grid[y][x]:
                     num = self.grid[y][x]
@@ -39,8 +43,8 @@ class Grid:
             while True:
                 col = random.randint(0, 7)
                 row = random.randint(0, 7)
-                print(col, row)
-                print(row, col)
+                # print(col, row)
+                # print(row, col)
                 if type(self.grid[row][col]) != Bomb:
                     self.grid[row][col] = Bomb(position = (col, row))
                     self.update_grid(col, row)
