@@ -13,7 +13,7 @@ class Tile(ABC):
 			y = (y * 100) + 50
 			x = (x * 100) + 50
 
-			self.tile = pygame.image.load("dark_tile.png").convert_alpha
+			self.tile = pygame.image.load("img/dark_tile.png").convert_alpha()
 			self.tile = pygame.transform.scale(self.tile, (50, 50))
 			self.tile_rect = self.tile.get_rect(center = (y, x))
 		
@@ -21,7 +21,7 @@ class Tile(ABC):
 			y = (y * 100) + 50
 			x = (x * 100) + 50
 
-			self.tile = pygame.image.load("light_tile.png").convert_alpha
+			self.tile = pygame.image.load("img/light_tile.png").convert_alpha()
 			self.tile = pygame.transform.scale(self.tile, (50, 50))
 			self.tile_rect = self.tile.get_rect(center = (y, x))
 

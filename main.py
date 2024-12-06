@@ -31,7 +31,6 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                print("This exists")
                 pygame.quit()
                 sys.exit()
 

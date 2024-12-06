@@ -67,7 +67,7 @@ class Grid:
         for y in range(8):
             for x in range(8):
                 print(f"{y}, {x}")
-                self.grid[y][x].display(position = (y, x))
+                self.grid[y][x].display(self.grid[y][x],(y, x))
 
     #This might blow up
     def delete(self, location):
