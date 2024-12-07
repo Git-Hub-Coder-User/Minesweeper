@@ -66,11 +66,13 @@ class Grid:
     def visual_set_up(self):
         for y in range(8):
             for x in range(8):
-                # print(f"{y}, {x}")
-                print(type(self.grid[y][x]))
-                print(self.grid[y][x])
-                tile = self.grid[y][x]
-                tile.display((y, x))
+                try: 
+                    # print(f"{y}, {x}")
+                    temp = self.grid[y][x]
+                    # print(type(temp))
+                    temp.display()
+                except:
+                    pass
 
     #This might blow up
     def delete(self, location):
