@@ -25,7 +25,7 @@ def main():
     # background.visual_set_up()
 
     foreground = Grid(Cover)
-    # foreground.convert_grid()
+    foreground.convert_grid()
     foreground.visual_set_up()
 
     while True:
