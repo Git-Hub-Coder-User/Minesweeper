@@ -66,9 +66,10 @@ class Number(Tile):
 	def __init__(self, display = None, position = None, number = 0):
 		super().__init__(display, position)
 		y, x = position
+		self.number = number
 
 	def __str__(self):
-		return self.display
+		return str(self.number)
 
 	def display(self):
 		# screen.blit(thingies)

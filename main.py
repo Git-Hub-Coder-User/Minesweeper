@@ -18,14 +18,13 @@ clock = pygame.time.Clock()
 def main():
     game = Game("img/backgroud_img.png")
     game.resize_img()
-    # background = Grid()
-    # background.generate_bombs()
-    # print(background)
-    # background.convert_grid()
-    # background.visual_set_up()
+    background = Grid()
+    background.generate_bombs()
+    print(background)
+    background.convert_grid()
+    background.visual_set_up()
 
     foreground = Grid(Cover)
-    foreground.convert_grid()
     foreground.visual_set_up()
 
     while True:
@@ -33,6 +32,12 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                y, x = pygame.mouse.get_pos()
+                y = (y - 25) / 50
+                x = (x - 25) / 50
+                foreground.delete(y, x)
 
 
 main()

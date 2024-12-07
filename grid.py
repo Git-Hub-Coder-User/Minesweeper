@@ -5,7 +5,7 @@ from tile import(
     Blank, 
     Number, 
     Cover, 
-    Bomb
+    Bomb, 
 )
 
 class Grid:
@@ -31,7 +31,7 @@ class Grid:
     def convert_grid(self):
         for y in range(8):
             for x in range(8): 
-                print(y, x)
+                # print(y, x, self.grid[y][x])
                 if type(self.grid[y][x]) == Bomb:
                     pass
                 elif self.grid[y][x] == 0:
@@ -66,8 +66,11 @@ class Grid:
     def visual_set_up(self):
         for y in range(8):
             for x in range(8):
-                print(f"{y}, {x}")
-                self.grid[y][x].display(self.grid[y][x],(y, x))
+                # print(f"{y}, {x}")
+                print(type(self.grid[y][x]))
+                print(self.grid[y][x])
+                tile = self.grid[y][x]
+                tile.display((y, x))
 
     #This might blow up
     def delete(self, location):
