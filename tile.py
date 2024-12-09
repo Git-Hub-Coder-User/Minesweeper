@@ -6,7 +6,7 @@ class Tile(ABC):
 	def __init__(self, position = None):
 		self.position = position
 	
-	def display(self):
+	def display(self, screen):
 		y, x = self.position
 		if (y + x) % 2 == 0:
 			y = (y * 100) + 50
@@ -15,6 +15,7 @@ class Tile(ABC):
 			self.tile = pygame.image.load("img/dark_tile.png").convert_alpha()
 			self.tile = pygame.transform.scale(self.tile, (50, 50))
 			self.tile_rect = self.tile.get_rect(center = (y, x))
+			screen.blit(self.tile, (x, y))
 		
 		if (y + x) % 2 == 1:
 			y = (y * 100) + 50
@@ -23,6 +24,7 @@ class Tile(ABC):
 			self.tile = pygame.image.load("img/light_tile.png").convert_alpha()
 			self.tile = pygame.transform.scale(self.tile, (50, 50))
 			self.tile_rect = self.tile.get_rect(center = (y, x))
+			screen.blit(self.tile, (x, y))
 
 class Bomb(Tile):
 	def __init__(self, position):

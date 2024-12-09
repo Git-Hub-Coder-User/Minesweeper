@@ -63,14 +63,14 @@ class Grid:
             except:
                 pass
     
-    def visual_set_up(self):
+    def visual_set_up(self, screen):
         for y in range(8):
             for x in range(8):
                 try: 
                     # print(f"{y}, {x}")
                     temp = self.grid[y][x]
                     # print(type(temp))
-                    temp.display()
+                    temp.display(screen)
                 except:
                     pass
 
